@@ -44,3 +44,5 @@ npm i eslint @rocketseat/eslint-config -D
 npm i prisma -D
 npx prisma init
 npm i @prisma/client
+
+npm i vitest vite-tsconfig-paths -
