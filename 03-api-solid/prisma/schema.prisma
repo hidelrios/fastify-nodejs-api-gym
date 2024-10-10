@@ -14,11 +14,13 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(uuid())
+  id            String @id @default(uuid())
   name          String
-  email         String    @unique
+  email         String @unique
   password_hash String
-  checkIns      CheckIn[]
+  role          Role   @default(MEMBER)
+
+  checkIns CheckIn[]
 
   @@map("users")
 }
@@ -45,4 +47,9 @@ model Gym {
   checkIns    CheckIn[]
 
   @@map("gyms")
+}
+
+enum Role {
+  ADMIN
+  MEMBER
 }
